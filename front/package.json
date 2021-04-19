@@ -10,7 +10,10 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.4.5",
+    "less": "^4.1.1",
+    "save-dev": "0.0.1-security",
     "vue": "^2.6.11",
+    "vue-router": "^3.5.1",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
@@ -20,8 +23,11 @@
     "@vue/cli-plugin-vuex": "^4.5.12",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "css-loader": "^5.2.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "less-loader": "^7.3.0",
+    "style-loader": "^2.0.0",
     "vue-cli-plugin-element": "^1.0.1",
     "vue-template-compiler": "^2.6.11"
   },
