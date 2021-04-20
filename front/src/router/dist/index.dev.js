@@ -21,25 +21,49 @@ _vue["default"].use(_vueRouter["default"]);
 
 var Login = function Login() {
   return Promise.resolve().then(function () {
-    return _interopRequireWildcard(require("@/views/login/Login"));
-  });
-};
-
-var Find = function Find() {
-  return Promise.resolve().then(function () {
-    return _interopRequireWildcard(require('@/views/index/childViews/findmusic/Find'));
+    return _interopRequireWildcard(require("views/login/Login"));
   });
 };
 
 var Index = function Index() {
   return Promise.resolve().then(function () {
-    return _interopRequireWildcard(require('@/views/index/Index'));
+    return _interopRequireWildcard(require('views/index/Index'));
+  });
+};
+
+var Find = function Find() {
+  return Promise.resolve().then(function () {
+    return _interopRequireWildcard(require('views/index/childViews/findmusic/Find'));
   });
 };
 
 var Rank = function Rank() {
   return Promise.resolve().then(function () {
-    return _interopRequireWildcard(require('@/views/index/childViews/rank/Rank'));
+    return _interopRequireWildcard(require('views/index/childViews/rank/Rank'));
+  });
+};
+
+var SongDetail = function SongDetail() {
+  return Promise.resolve().then(function () {
+    return _interopRequireWildcard(require('views/index/childViews/songDetail/SongDetail'));
+  });
+};
+
+var MvDetails = function MvDetails() {
+  return Promise.resolve().then(function () {
+    return _interopRequireWildcard(require("views/index/childViews/mvDetails/MvDetails"));
+  });
+};
+
+var SingerDetails = function SingerDetails() {
+  return Promise.resolve().then(function () {
+    return _interopRequireWildcard(require("views/index/childViews/singerDetails/SingerDetails"));
+  });
+};
+
+var AlbumDetails = function AlbumDetails() {
+  return Promise.resolve().then(function () {
+    return _interopRequireWildcard(require("views/index/childViews/albumDetails/AlbumDetails"));
   });
 };
 
@@ -51,6 +75,7 @@ var routes = [{
   name: 'Login',
   component: Login
 }, {
+  //首页
   path: '/index',
   component: Index,
   redirect: '/find',
@@ -58,10 +83,27 @@ var routes = [{
     name: 'Find',
     path: '/find',
     component: Find
-  }, {
+  }, //排行
+  {
     name: 'Rank',
     path: '/rank',
     component: Rank
+  }, {
+    //歌单详情
+    path: "/songDetails",
+    component: SongDetail
+  }, {
+    //mv详情
+    path: "/mvDetails",
+    component: MvDetails
+  }, {
+    //歌手详情
+    path: "/singerDetails",
+    component: SingerDetails
+  }, {
+    //专辑详情
+    path: "/albumDetails",
+    component: AlbumDetails
   }]
 }];
 var router = new _vueRouter["default"]({
