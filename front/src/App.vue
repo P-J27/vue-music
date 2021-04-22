@@ -5,13 +5,10 @@
 </template>
 
 <script>
-
 export default {
-  name: 'app',
-  components: {
-    
-  }
-}
+  name: "app",
+  components: {},
+};
 </script>
 
 <style>
@@ -19,5 +16,4 @@ export default {
   margin: 0;
   padding: 0;
 } */
-
 </style>

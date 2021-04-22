@@ -1,8 +1,14 @@
 <template>
   <div id="SongSheet">
-    <div :style="[{'flex': styleAttr == 'singer'? isIE?'0 0 17%':'0 0 18.5%':isIE?'0 0 12%':'0 0 13.5%'}]" class="item" v-for="item of sheetList" :key="item.id" @click="toDetail(item)">
+    <div :style="[{'flex': styleAttr == 'singer'? isIE?'0 0 17%':'0 0 18.5%':isIE?'0 0 12%':'0 0 13.5%'}]"
+         class="item"
+         v-for="item of sheetList"
+         :key="item.id"
+         @click="toDetail(item)">
       <div class="item-box">
-        <el-image :src="imageUrlAttr === 'home' ? item.picUrl + '?param=300y300' : item.coverImgUrl + '?param=300y300'"></el-image>
+        <el-image
+                  :src="imageUrlAttr === 'home' ? item.picUrl + '?param=300y300' : item.coverImgUrl + '?param=300y300'">
+        </el-image>
       </div>
       <div class="item-title">
         {{item.name}}
@@ -39,25 +45,25 @@ export default {
     },
   },
   methods: {
-      toDetail(item){
-        if(this.songType=='default'){
-            this.$router.push({
-                path:'/songDetails',
-                query:{
-                    id:item.id
-                }
-            })
-        }
+    toDetail(item) {
+      if (this.songType == "default") {
+        this.$router.push({
+          path: "/songDetails",
+          query: {
+            id: item.id,
+          },
+        });
       }
+    },
   },
-  mounted(){
-      //判断是否是ie浏览器
-      //主要解决ie浏览器宽度显示 调整flex-basis值
-      //通过判断ie独有属性 window.activeXObject
-      if (!!window.ActiveXObject || "ActiveXObject" in window) {
-        this.isIE = true;
-      }
-  }
+  mounted() {
+    //判断是否是ie浏览器
+    //主要解决ie浏览器宽度显示 调整flex-basis值
+    //通过判断ie独有属性 window.activeXObject
+    if (!!window.ActiveXObject || "ActiveXObject" in window) {
+      this.isIE = true;
+    }
+  },
 };
 </script>
 

@@ -9,6 +9,12 @@ import "element-ui/lib/theme-chalk/index.css";
 //导入全局样式表
 import "./assets/css/base.css";
 
+//导入字体图标样式表
+import "./assets/fonts/iconfont.css";
+//导入自定义工具类
+import utils from "./utils/utils";
+Vue.prototype.$utils = utils;
+
 Vue.config.productionTip = false
 
 new Vue({

@@ -1,12 +1,13 @@
 <template>
   <div id="find">
     <div class="content-width">
-      <banner :bannerInfo="banner" class="banner"></banner>
+      <banner :bannerInfo="banner"
+              class="banner"></banner>
       <div class="recomBody">
-          <recom-song-list :songList="recomSongInfo.songList"></recom-song-list>
-        <recom-music @getMusic="getMusic" :musicList="recomMusicList"></recom-music>
-                <recom-singer :singerList="recomSingerInfo.singerList"></recom-singer>
-
+        <recom-song-list :songList="recomSongInfo.songList"></recom-song-list>
+        <recom-music @getMusic="getMusic"
+                     :musicList="recomMusicList"></recom-music>
+        <recom-singer :singerList="recomSingerInfo.singerList"></recom-singer>
 
       </div>
 
@@ -16,13 +17,18 @@
 </template>
 
 <script>
-import { getBanner, getRecomNewMusicList,getRecomSongList,getMusicList,getRecomSinger } from "network/home";
+import {
+  getBanner,
+  getRecomNewMusicList,
+  getRecomSongList,
+  getMusicList,
+  getRecomSinger,
+} from "network/home";
 
 import Banner from "components/content/banner/Banner";
 import RecomMusic from "components/content/recom-music/RecomMusic";
-import RecomSongList from 'components/content/recom-songlist/RecomSongList';
-import RecomSinger from 'components/content/recom-singer/RecomSinger'
-
+import RecomSongList from "components/content/recom-songlist/RecomSongList";
+import RecomSinger from "components/content/recom-singer/RecomSinger";
 
 export default {
   name: "find",
@@ -30,7 +36,7 @@ export default {
     Banner,
     RecomMusic,
     RecomSongList,
-    RecomSinger
+    RecomSinger,
   },
   data() {
     return {
@@ -52,12 +58,10 @@ export default {
     };
   },
   methods: {
-
-
-      //获取播放歌曲详情
-      getMusic(musicId) {
-        this.$emit("getMusic", musicId);
-      },
+    //获取播放歌曲详情
+    getMusic(musicId) {
+      this.$emit("getMusic", musicId);
+    },
     //获取banner
     async getBannerRef() {
       let res = await getBanner();

@@ -1,33 +1,71 @@
+
 <template>
   <div id="Index">
     <el-container class="container">
       <el-header>
 
-        <Header></Header>
+        <Header :index="index"></Header>
       </el-header>
       <el-main>
-        
 
-        <router-view> </router-view>
+        <router-view @getMusic="getMusic"> </router-view>
       </el-main>
       <el-footer>
-        55
+        <Footer></Footer>
       </el-footer>
+      <Player @getMusic="getMusic"
+              @getMusicUrl="getMusicUrlRef"
+              :playMusicInfo="playMusicInfo"></Player>
     </el-container>
   </div>
 </template>
 
 <script>
 import Header from "components/common/layout/header/Header";
+import Footer from "components/common/layout/footer/Footer";
+import Player from "components/common/player/Player";
 
+import { getMusicUrl, getMusicList } from "network/home";
 export default {
   name: "Index",
   data() {
-    return {};
+    return {
+      index: "/find",
+      playMusicInfo: null,
+    };
   },
-  methods: {},
+  methods: {
+   
+    getMusic(musicId) {
+      getMusicList(musicId).then((res) => {
+        if (res.code !== 200) return this.$message.error("ERROR");
+        if (this.$store.state.clearListFlag == true) {
+          this.$store.commit("setclearListFlag", false);
+        }
+        this.$store.commit("setPlayerMusicId", res.songs[0].id);
+        this.$store.commit("setMusicDetailsList", res.songs[0]);
+      });
+    },
+  
+    //获取歌曲url
+    getMusicUrlRef(id) {
+      getMusicUrl(id).then((res) => {
+        if (res.code !== 200) return this.$message.error("ERROR");
+        if (res.data[0].br == 0) {
+          this.playMusicInfo = null;
+
+          //无版权删除
+          this.$store.commit("removeMusicList", id);
+          return this.$message.error("无版权，不能播放");
+        }
+        this.playMusicInfo = res.data[0];
+      });
+    },
+  },
   components: {
     Header,
+    Player,
+    Footer,
   },
 };
 </script>
