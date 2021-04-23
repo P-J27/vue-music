@@ -55,10 +55,10 @@
       </transition>
 
       <!-- 列表体 -->
-      <!-- <div class="list">
+      <div class="list">
         <music-list @getMusic="getMusic"
                     :musicList="songDetails.musicList"></music-list>
-      </div> -->
+      </div>
 
     </el-card>
 
@@ -66,6 +66,8 @@
 </template>
 
 <script>
+import MusicList from 'components/common/musicList/MusicList'
+
 export default {
   name: "SongListDetails",
   data() {
@@ -82,7 +84,9 @@ export default {
       },
     },
   },
-  components: {},
+  components: {
+      MusicList
+  },
   methods: {
     showDescribe() {
       this.isShowDescribe = !this.isShowDescribe;
