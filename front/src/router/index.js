@@ -21,8 +21,9 @@ const Find = () => import('views/index/childViews/findmusic/Find')
 const Rank = () => import('views/index/childViews/rank/Rank')
 const SongDetail = () => import('views/index/childViews/songDetail/SongDetail')
 const MvDetails = () => import("views/index/childViews/mvDetails/MvDetails")
-const SingerDetails =() => import("views/index/childViews/singerDetails/SingerDetails")
-const AlbumDetails =() => import("views/index/childViews/albumDetails/AlbumDetails")
+const SingerDetails = () => import("views/index/childViews/singerDetails/SingerDetails")
+const AlbumDetails = () => import("views/index/childViews/albumDetails/AlbumDetails")
+const SongLists = () => import('views/index/childViews/songLists/SongLists')
 const routes = [{
     path: '/',
     redirect: '/index'
@@ -42,12 +43,12 @@ const routes = [{
         path: '/find',
         component: Find,
       },
-       //排行
+      //排行
       {
         name: 'Rank',
         path: '/rank',
         component: Rank
-      }, 
+      },
       {
         //歌单详情
         path: "/songDetails",
@@ -67,6 +68,13 @@ const routes = [{
         path: "/albumDetails",
         component: AlbumDetails
       },
+      {
+        // 歌单分类
+        name:'SongLists',
+        path:'/songLists',
+        component:SongLists
+        
+      }
     ]
 
 

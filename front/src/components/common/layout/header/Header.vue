@@ -9,7 +9,7 @@
         </el-menu-item>
         <el-menu-item index="rank" @click="changeItem('Rank')">排行榜
         </el-menu-item>
-        <el-menu-item index="songList" @click="changeItem('SongList')">歌单
+        <el-menu-item index="songList" @click="changeItem('SongLists')">歌单
         </el-menu-item>
         <el-menu-item index="singer" @click="changeItem('Singer')">歌手
         </el-menu-item>
