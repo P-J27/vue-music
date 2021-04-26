@@ -1,7 +1,7 @@
 .self-font h2 {
   margin: 15px;
 }
-.self-font h2 i {
+.self-font h2 em {
   margin-right: 5px;
   display: inline-block;
   width: 5px;

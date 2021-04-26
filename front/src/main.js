@@ -1,3 +1,10 @@
+/*
+ * @Author: PJ
+ * @Date: 2021-04-16 17:29:40
+ * @Description: 
+ * @Github: https://github.com/P-J27/vue-music
+ * @Gitee: https://gitee.com/p_pj/vue-music
+ */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -16,6 +23,9 @@ import utils from "./utils/utils";
 Vue.prototype.$utils = utils;
 
 Vue.config.productionTip = false
+
+
+
 
 new Vue({
   router,

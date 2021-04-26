@@ -73,11 +73,11 @@
                 <el-card shadow="always">
                   <div class="musicList">
                     <div class="top">
-                      <h2><i class="iconfont icon-bofangduilie"></i>播放列表
+                      <h2><em class="iconfont icon-bofangduilie"></em>播放列表
                         <span>{{this.musicDetailsList.length}}</span>
                       </h2>
-                      <span @click="clearPlayerList">清空列表<i
-                           class="iconfont icon-qingkong"></i></span>
+                      <span @click="clearPlayerList">清空列表<em
+                           class="iconfont icon-qingkong"></em></span>
                     </div>
                     <div class="list">
                       <el-table :data="musicDetailsList"
@@ -156,7 +156,6 @@ export default {
 
   methods: {
     //updateTime  201.024s
-    //实时更新
     updateTime() {
       if (this.clearListFlag == true) {
         return;
@@ -191,7 +190,9 @@ export default {
 
     moveTransFormWidth(val) {
       //val 拖拽条进度
- 
+      // console.log(val)
+      // if (!val && !this.musicDetails) return;
+
       this.transFromWidth = val;
       if (this.transFromWidth !== val) return;
       this.$refs.audioRef.currentTime =
@@ -518,7 +519,7 @@ export default {
                   margin-left: 7px;
                   font-size: 18px;
 
-                  i {
+                  em {
                     margin-right: 2px;
                     font-size: 16px;
                   }
@@ -529,7 +530,7 @@ export default {
                   font-size: 14px;
                   cursor: pointer;
 
-                  i {
+                  em {
                     font-size: 16px;
                   }
                 }

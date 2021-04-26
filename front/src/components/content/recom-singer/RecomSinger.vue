@@ -1,7 +1,14 @@
+<!--
+ * @Author: PJ
+ * @Date: 2021-04-20 23:16:26
+ * @Description: 
+ * @Github: https://github.com/P-J27/vue-music
+ * @Gitee: https://gitee.com/p_pj/vue-music
+-->
 <template>
   <div id="RecomSinger"
        class="self-font">
-    <h2 class="title"><i></i> 推荐歌手</h2>
+    <h2 class="title"><em></em> 推荐歌手</h2>
     <singer :singerList="singerList"></singer>
   </div>
 </template>
