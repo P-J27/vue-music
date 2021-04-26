@@ -53,6 +53,13 @@ export default {
             id: item.id,
           },
         });
+      } else if (this.songType == "singer") {
+        this.$router.push({
+          path: "/albumDetails",
+          query: {
+            id: item.id,
+          },
+        });
       }
     },
   },
