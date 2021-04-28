@@ -42,6 +42,14 @@
           </div>
 
         </div>
+        <div class="mv"
+             :style="{'display':flag=='mv'?'block':'none'}">
+          <mv-list :mvType="'singer'"
+                   :mvList="mvList"
+                   :mvAttr="mvAttr">
+          </mv-list>
+        </div>
+
         <div v-if="singInfo"
              class="info"
              :style="{'display':flag=='info'?'block':'none'}">
@@ -63,6 +71,7 @@
 </template>
 
 <script>
+import MvList from 'components/common/mv/mvList/MvList'
 import SongSheet from "components/common/song/songSheet/SongSheet";
 import MusicList from "components/common/musicList/MusicList";
 export default {
@@ -70,6 +79,7 @@ export default {
   components: {
     SongSheet,
     MusicList,
+    MvList
   },
   data() {
     return {
