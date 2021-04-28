@@ -6,10 +6,10 @@
  * @Gitee: https://gitee.com/p_pj/vue-music
 -->
 <template>
-  <div id="MvComment">
+  <div id="MvComment" v-if="CommentList.length">
     <div class="top"></div>
     <div class="Comments"
-         v-if="CommentList.length">
+         >
       <div class="title"
            :style="Types.styleType">
         <span class="iconfont"

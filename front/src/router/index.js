@@ -18,7 +18,9 @@ Vue.use(VueRouter)
 const Login = () => import("views/login/Login")
 const Index = () => import('views/index/Index')
 const Find = () => import('views/index/childViews/findmusic/Find')
+const Singer = () => import('views/index/childViews/singer/Singer')
 const Rank = () => import('views/index/childViews/rank/Rank')
+const Mv = () => import('views/index/childViews/mv/Mv')
 const SongDetail = () => import('views/index/childViews/songDetail/SongDetail')
 const MvDetails = () => import("views/index/childViews/mvDetails/MvDetails")
 const SingerDetails = () => import("views/index/childViews/singerDetails/SingerDetails")
@@ -49,11 +51,26 @@ const routes = [{
         path: '/rank',
         component: Rank
       },
+      //歌手
+      {
+        name: 'Singer',
+        path: '/singer',
+        component: Singer
+      },
+
+      //MV主页
+      {
+        name: 'MV',
+        path: '/mv',
+        component: Mv
+      },
       {
         //歌单详情
         path: "/songDetails",
         component: SongDetail
-      }, {
+      },
+
+      {
         //mv详情
         path: "/mvDetails",
         component: MvDetails
@@ -65,15 +82,16 @@ const routes = [{
       },
       {
         //专辑详情
+        name:'AlbumDetails',
         path: "/albumDetails",
         component: AlbumDetails
       },
       {
         // 歌单分类
-        name:'SongLists',
-        path:'/songLists',
-        component:SongLists
-        
+        name: 'SongLists',
+        path: '/songLists',
+        component: SongLists
+
       }
     ]
 
