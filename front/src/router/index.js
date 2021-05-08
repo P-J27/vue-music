@@ -26,6 +26,7 @@ const MvDetails = () => import("views/index/childViews/mvDetails/MvDetails")
 const SingerDetails = () => import("views/index/childViews/singerDetails/SingerDetails")
 const AlbumDetails = () => import("views/index/childViews/albumDetails/AlbumDetails")
 const SongLists = () => import('views/index/childViews/songLists/SongLists')
+const Search = ()=>import('views/index/childViews/search/Search')
 const routes = [{
     path: '/',
     redirect: '/index'
@@ -92,7 +93,11 @@ const routes = [{
         path: '/songLists',
         component: SongLists
 
-      }
+      },{
+        //搜索
+        path: "/search",
+        component: Search
+      },
     ]
 
 

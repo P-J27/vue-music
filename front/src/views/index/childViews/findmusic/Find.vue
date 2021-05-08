@@ -100,6 +100,7 @@ export default {
     },
   },
   created() {
+    console.log(process);
     //初始化banner数据
     this.getBannerRef();
     //初始化推荐歌单数据

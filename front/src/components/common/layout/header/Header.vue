@@ -54,7 +54,13 @@ export default {
     };
   },
   methods: {
-    toSearch() {},
+    toSearch() {
+      if(this.inputValue=='')return this.$message('ERROR')
+      this.$store.commit('setSearch', this.inputValue)
+      this.$router.push({
+        path:'/search'
+      })
+    },
     changeItem(itemName) {
       //   this.$router.push(path)
       this.$router.push({
