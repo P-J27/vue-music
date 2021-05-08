@@ -26,10 +26,11 @@ const MvDetails = () => import("views/index/childViews/mvDetails/MvDetails")
 const SingerDetails = () => import("views/index/childViews/singerDetails/SingerDetails")
 const AlbumDetails = () => import("views/index/childViews/albumDetails/AlbumDetails")
 const SongLists = () => import('views/index/childViews/songLists/SongLists')
-const Search = ()=>import('views/index/childViews/search/Search')
+const Search = () => import('views/index/childViews/search/Search')
 const routes = [{
     path: '/',
-    redirect: '/index'
+    redirect: '/index',
+
   },
   {
     path: '/login',
@@ -83,7 +84,7 @@ const routes = [{
       },
       {
         //专辑详情
-        name:'AlbumDetails',
+        name: 'AlbumDetails',
         path: "/albumDetails",
         component: AlbumDetails
       },
@@ -93,7 +94,7 @@ const routes = [{
         path: '/songLists',
         component: SongLists
 
-      },{
+      }, {
         //搜索
         path: "/search",
         component: Search
@@ -105,6 +106,7 @@ const routes = [{
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

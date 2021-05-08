@@ -85,4 +85,8 @@ div .el-footer {
   position: relative;
   /*overflow-x: hidden;*/
 }
+/* .el-main{
+  background-image: url('~assets/img/bg.jpg');
+  background-size: cover;
+} */
 </style>

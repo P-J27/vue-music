@@ -40,6 +40,7 @@
         </div>
         <div class="cont">
           <!--单曲-->
+
           <div class="music"
                :style="{'display': flag == 'music'?'block':'none' }">
             <music-list @getMusic="getMusic"
@@ -48,21 +49,9 @@
           <!--歌手-->
           <div class="singer"
                :style="{'display': flag == 'singer'?'block':'none' }">
-            <ul class="singerList">
-              <li @click="toSingerDetails(item.id)"
-                  class="singerItem"
-                  v-for="item in singerList"
-                  :key="item.id">
-                <div class="img">
-                  <el-image style="width: 100px; height: 100px"
-                            :src="item.img1v1Url"
-                            fit="cover"></el-image>
-                </div>
-                <div class="info">
-                  <span>{{ item.name }}</span>
-                </div>
-              </li>
-            </ul>
+
+            <singer-list :singerList="singerList">
+            </singer-list>
           </div>
           <!--专辑-->
           <div class="album"
@@ -78,44 +67,12 @@
                         :styleAttr="styleAttr"
                         :sheetList="songList"></song-sheet>
           </div>
+          <!--mv-->
           <div class="video"
                :style="{'display': flag == 'video'?'block':'none' }">
             <mv-list :mvList="mvList"></mv-list>
           </div>
-          <!--mv-->
-          
-          <!-- <div class="video"
-               :style="{'display': flag == 'video'?'block':'none' }">
-            <ul class="videoList">
-              <li @click="toDetils(item.id)"
-                  class="item"
-                  v-for="item in mvList"
-                  :key="item.id">
-                <div class="img">
-                  <el-image :src=item.cover
-                            fit="cover"></el-image>
-                  <div class="smoke">
-                    <span>{{item.artistName}}</span>
-                    <div>
-                      <span
-                            class="playCount"><i>点击量:</i>{{item.playCount | tranNumber(that)}}</span>
-                      <span
-                            class="playTime">{{item.duration | formatTime(that)}}</span>
-                    </div>
-                  </div>
-                  <div class="smokeIcon">
-                    <span class="iconfont icon-bofang"></span>
-                  </div>
-                </div>
-                <div class="info">
-                  <h2>
-                    {{item.name}}
-                  </h2>
-                </div>
-              </li>
-            </ul>
-          </div>
-           -->
+
         </div>
       </el-card>
     </div>
@@ -124,13 +81,14 @@
 </template>
 
 <script>
-import MvList from 'components/common/mv/mvList/MvList'
+import SingerList from "components/common/singer/singerList/SingerList";
+import MvList from "components/common/mv/mvList/MvList";
 import SongSheet from "components/common/song/songSheet/SongSheet";
 import MusicList from "components/common/musicList/MusicList";
 import { getSearchContent } from "network/home";
 export default {
   name: "SearchResults",
-  components: { SongSheet, MusicList ,MvList},
+  components: { SongSheet, MusicList, MvList, SingerList },
   data() {
     return {
       inputValue: "",
@@ -168,6 +126,7 @@ export default {
         },
       });
     },
+
     changeTabs(name) {
       if (name == "music") {
         this.searchInfo.type = 1;

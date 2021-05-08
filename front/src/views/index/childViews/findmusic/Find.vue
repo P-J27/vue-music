@@ -117,6 +117,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+// #find {
+//   background-image: url("~assets/img/bg2.jpg");
+//   background-size: cover;
+// }
 .recomBody {
   padding-left: 30px;
 }
