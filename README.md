@@ -1,23 +1,91 @@
-# vue-music
+# vue-music仿网易云音乐(Vue + Element-ui)
 
-#### 介绍
+## 介绍
 基于vue的音乐网站(Vue全家桶 + Element-ui)
 
-#### 软件架构
-软件架构说明
+## 非常感谢
+
+[Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+
+## 预览地址
+
+[vue-music](http://47.98.142.133:80)
+
+#### 演示
+
+##### 首页
+
+ ![image-20210515203202148](README.assets/image-20210515203202148.png)
+
+#####  歌单详情
+
+ ![image-20210515203231709](README.assets/image-20210515203231709.png)
+
+#####  歌手详情
+
+ ![image-20210515203324231](README.assets/image-20210515203324231.png)
+
+#####  mv详情
+
+ ![image-20210515203342290](README.assets/image-20210515203342290.png)
+
+##### 排行榜
+
+![image-20210515204304064](README.assets/image-20210515204304064.png)
+
+##### 歌手分类
+
+![image-20210515204325743](README.assets/image-20210515204325743.png)
 
 
-#### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+##### 搜索页
 
-#### 使用说明
+![image-20210515204448586](README.assets/image-20210515204448586.png)
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+
+
+
+
+## 目录结构
+
+##### src:
+
+###### --assets  存放静态资源
+
+###### --components 视图相关组件
+
+###### --network 网络请求
+
+###### --plugins 存放插件(element-ui)
+
+###### --router 路由
+
+###### --store vuex
+
+###### --utils 自定义工具
+
+###### --views 视图
+
+
+
+## 安装运行
+
+```shell
+克隆
+$ git clone git@github.com:/P-J27/vue-music.git
+或者
+$ git clone git@gitee.com:p_pj/vue-music.git
+
+切到根目录
+$ cd front
+安装依赖
+$ npm install
+运行
+$ npm run serve
+```
+
+
 
 #### 参与贡献
 
@@ -26,12 +94,9 @@
 3.  提交代码
 4.  新建 Pull Request
 
-
 #### 特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+[GitHub](https://github.com/P-J27/vue-music)
+
+[Gitee](https://gitee.com/p_pj/vue-music)
+
